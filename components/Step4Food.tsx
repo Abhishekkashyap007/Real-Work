@@ -7,14 +7,14 @@ interface Props {
 }
 
 const FOODS = [
-  { name: "Dosa", emoji: "🍣" },
+  { name: "Dosa", emoji: "" },
   { name: "Pasta", emoji: "🍝" },
   { name: "Pizza", emoji: "🍕" },
   { name: "Biryani", emoji: "🍛" },
   { name: "Kebabs", emoji: "🍢" },
   { name: "Chicken", emoji: "🍗" },
   { name: "Burgers", emoji: "🍔" },
-  { name: "Cold Coffee", emoji: "☕" },
+  { name: "Cold Coffee", emoji: "" },
 ];
 
 export default function Step4Food({ onFoodSelect }: Props) {
@@ -34,18 +34,18 @@ export default function Step4Food({ onFoodSelect }: Props) {
   return (
     <div className="step-enter flex flex-col items-center justify-center w-full">
       {/* Diamond icon */}
-      <div className="mb-6">
-        <span className="text-3xl" style={{ color: "rgba(120, 70, 90, 0.7)" }}>
+      <div className="mb-4">
+        <span className="text-2xl" style={{ color: "rgba(120, 70, 90, 0.7)" }}>
           ◆
         </span>
       </div>
 
       {/* Title */}
       <h2
-        className="text-center mb-4"
+        className="text-center mb-3"
         style={{
           fontFamily: "var(--font-playfair)",
-          fontSize: "2.8rem",
+          fontSize: "2.2rem",
           fontWeight: 500,
           color: "#3d2020",
         }}
@@ -55,10 +55,10 @@ export default function Step4Food({ onFoodSelect }: Props) {
 
       {/* Subtitle */}
       <p
-        className="text-center mb-8 tracking-[0.3em] uppercase"
+        className="text-center mb-6 tracking-[0.3em] uppercase"
         style={{
           fontFamily: "var(--font-inter)",
-          fontSize: "0.95rem",
+          fontSize: "0.8rem",
           color: "rgba(60, 30, 40, 0.9)",
           fontWeight: 500,
         }}
@@ -68,8 +68,8 @@ export default function Step4Food({ onFoodSelect }: Props) {
 
       {/* Food grid - 2 columns x 4 rows */}
       <div
-        className="grid grid-cols-2 mb-10"
-        style={{ maxWidth: "450px", width: "100%", gap: "16px" }}
+        className="grid grid-cols-2 mb-8"
+        style={{ maxWidth: "400px", width: "100%", gap: "12px" }}
       >
         {FOODS.map(({ name, emoji }) => {
           const isSelected = selected.includes(name);
@@ -86,19 +86,19 @@ export default function Step4Food({ onFoodSelect }: Props) {
                 border: isSelected
                   ? "2px solid rgba(255, 105, 180, 0.9)"
                   : "2px solid rgba(255, 105, 180, 0.3)",
-                borderRadius: "20px",
-                padding: "20px 8px",
+                borderRadius: "16px",
+                padding: "16px 6px",
                 transform: isSelected ? "scale(1.05)" : "scale(1)",
                 boxShadow: isSelected
                   ? "0 4px 15px rgba(255, 105, 180, 0.3)"
                   : "none",
               }}
             >
-              <span style={{ fontSize: "2.2rem", marginBottom: "6px" }}>{emoji}</span>
+              <span style={{ fontSize: "1.8rem", marginBottom: "4px" }}>{emoji}</span>
               <span
                 style={{
                   fontFamily: "var(--font-inter)",
-                  fontSize: "1rem",
+                  fontSize: "0.85rem",
                   fontWeight: isSelected ? 600 : 500,
                   color: isSelected ? "#fff" : "rgba(60, 30, 40, 0.85)",
                 }}
@@ -112,10 +112,10 @@ export default function Step4Food({ onFoodSelect }: Props) {
 
       {/* Helper text */}
       <p
-        className="text-center mb-8 italic"
+        className="text-center mb-6 italic"
         style={{
           fontFamily: "var(--font-playfair)",
-          fontSize: "1rem",
+          fontSize: "0.85rem",
           color: "rgba(60, 30, 40, 0.6)",
         }}
       >
@@ -129,10 +129,10 @@ export default function Step4Food({ onFoodSelect }: Props) {
         className="w-full rounded-full transition-all duration-300"
         style={{
           fontFamily: "var(--font-inter)",
-          fontSize: "1rem",
+          fontSize: "0.9rem",
           letterSpacing: "1px",
           fontWeight: 600,
-          padding: "18px 32px",
+          padding: "14px 28px",
           background:
             selected.length > 0
               ? "rgba(255, 105, 180, 0.8)"
@@ -148,7 +148,7 @@ export default function Step4Food({ onFoodSelect }: Props) {
             selected.length > 0
               ? "0 4px 15px rgba(255, 105, 180, 0.3)"
               : "none",
-          maxWidth: "450px",
+          maxWidth: "400px",
         }}
       >
         {selected.length > 0
